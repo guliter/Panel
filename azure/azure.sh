@@ -32,7 +32,7 @@ ip=`curl http://whatismyip.akamai.com`
 
 
 add() {
-green"
+green "
 docker exec -it cloudpanel /bin/bash
 python3 manage.py createsuperuser
 
