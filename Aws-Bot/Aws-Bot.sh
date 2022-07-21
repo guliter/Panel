@@ -28,6 +28,7 @@ function white(){
 
 name=Aws-Bot
 echo
+green "命令提示:screen -r Aws-Bot 恢复后台运行 | Ctrl + a + d	保持后台运行"
 stty erase '^H' && read -p "请输入机器人Token：" Token
 
 ip=`curl http://whatismyip.akamai.com`
