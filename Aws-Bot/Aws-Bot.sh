@@ -52,7 +52,7 @@ pack
 pack() {
 sed -i '2c '$Token'' /root/$name/config.yml
 echo
-green"命令提示:
+green "命令提示:
 echo
 1.|sudo yum install epel-release;yum install screen&&screen -S Aws-Bot
 2.|cd /root/Aws-Bot&&./Aws-Bot
