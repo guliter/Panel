@@ -70,7 +70,7 @@ key
 sed -i "s/Tokent/$Token/g" /root/$name/config.yml
 echo
 green "命令提示:
-
+https://github.com/Yuzuki616/Aws-Manger-Bot
 1.|sudo yum install epel-release;yum install screen&&screen -S Aws-Bot
 2.|cd /root/Aws-Bot&&./Aws-Bot
 3.|Ctrl + a + d	保持后台运行 
