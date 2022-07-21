@@ -62,7 +62,7 @@ pack
 
 
 pack() {
-sed -i '2c '"Bot_Token: '$Token'' /root/$name/config.yml
+sed -i '2c ''Bot_Token: '$Token''' /root/$name/config.yml
 echo
 green "命令提示:
 echo
