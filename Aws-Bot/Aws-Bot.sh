@@ -43,7 +43,18 @@ wget https://raw.githubusercontent.com/guliter/Panel/main/$name/Aws-Bot -P /root
 chmod -R 777 /root/$name
 #unzip /root/$name/Aws-Bot.zip -d /root/$name
 chmod -R 777 /root/$name
-cd /root/$name  
+cd /root/$name
+> /root/$name/config.yml
+cat >> /root/$name/config.yml<<EOF
+Log_Level: error
+Bot_Token: Tg Bot Token
+User_Info:
+  0:
+    User_Name: ""
+    Now_Key: ""
+    Aws_Secret: {}
+
+EOF
 pack
 }
 
