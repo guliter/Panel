@@ -47,7 +47,7 @@ cd /root/$name
 > /root/$name/config.yml
 cat >> /root/$name/config.yml<<EOF
 Log_Level: error
-Bot_Token: Tg Bot Token
+Bot_Token: Tokent
 User_Info:
   0:
     User_Name: ""
@@ -62,7 +62,8 @@ pack
 
 
 pack() {
-sed -i '2c ''Bot_Token: '$Token''' /root/$name/config.yml
+#sed -i '2c 'Bot_Token: '$Token'' /root/$name/config.yml
+sed -i "s/Tokent/$Token/g" /root/$name/config.yml
 echo
 green "命令提示:
 echo
