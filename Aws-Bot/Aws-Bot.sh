@@ -39,9 +39,9 @@ rm -f /root/$name/*
 mkdir -p /root/$name
 
 yum -y install unzip zip
-wget https://raw.githubusercontent.com/guliter/Panel/main/$name/Aws-Bot.zip -P /root/$name
+wget https://raw.githubusercontent.com/guliter/Panel/main/$name/Aws-Bot -P /root/$name
 chmod -R 777 /root/$name
-unzip /root/$name/Aws-Bot.zip -d /root/$name
+#unzip /root/$name/Aws-Bot.zip -d /root/$name
 chmod -R 777 /root/$name
 cd /root/$name  
 pack
