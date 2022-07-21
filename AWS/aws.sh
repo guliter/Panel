@@ -55,7 +55,7 @@ pack
 
 pack() {
 echo
-redbg "【AWS-Panel】-默认面板:http://${ip}:8011"
+redbg "【AWS-Panel】-默认面板:http://${ip}:8011 【admin admin123456】"
 echo
 green"命令提示:
 echo
