@@ -52,7 +52,7 @@ start_menu
 start_menu(){
     clear
     echo
-    white "—————————————基础环境安装——————————————"
+    redbg "【azure-Panel】-默认面板:http://${ip}:8111"
     red "1.安装面板"
     blue "2.添加用户"
     red "3.卸载面板 "
