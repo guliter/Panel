@@ -33,6 +33,19 @@ stty erase '^H' && read -p "请输入机器人Token：" Token
 ip=`curl http://whatismyip.akamai.com`
 
 
+key() {
+> /root/$name/config.yml
+cat >> /root/$name/config.yml<<EOF
+Log_Level: error
+Bot_Token: Tokent
+User_Info:
+  0:
+    User_Name: ""
+    Now_Key: ""
+    Aws_Secret: {}
+EOF
+}
+
 install() {
 
 rm -f /root/$name/*
@@ -44,17 +57,7 @@ chmod -R 777 /root/$name
 #unzip /root/$name/Aws-Bot.zip -d /root/$name
 chmod -R 777 /root/$name
 cd /root/$name
-> /root/$name/config.yml
-cat >> /root/$name/config.yml<<EOF
-Log_Level: error
-Bot_Token: Tokent
-User_Info:
-  0:
-    User_Name: ""
-    Now_Key: ""
-    Aws_Secret: {}
-
-EOF
+key
 pack
 }
 
@@ -63,10 +66,11 @@ pack
 
 pack() {
 #sed -i '2c 'Bot_Token: '$Token'' /root/$name/config.yml
+key
 sed -i "s/Tokent/$Token/g" /root/$name/config.yml
 echo
 green "命令提示:
-echo
+
 1.|sudo yum install epel-release;yum install screen&&screen -S Aws-Bot
 2.|cd /root/Aws-Bot&&./Aws-Bot
 3.|Ctrl + a + d	保持后台运行 
