@@ -26,60 +26,44 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-name=aws-Panel
+name=Aws-Bot
+stty erase '^H' && read -p "请输入机器人Token：" Token
 
 ip=`curl http://whatismyip.akamai.com`
 
 
-add() {
-green"
-docker exec -it cloudpanel /bin/bash
-python3 manage.py createsuperuser
-
-"    
-}
-
 install() {
-echo
-docker run --name cloudpanel -d -it -p 8111:80 --restart=always cdntip/cloudpanel:v1.1 /bin/bash
-redbg "【azure-Panel】-默认面板:http://${ip}:8111"
-echo
-clear
-start_menu
+
+rm -f /root/$name/*
+mkdir -p /root/$name
+
+yum -y install unzip zip
+wget https://raw.githubusercontent.com/guliter/Panel/main/$name/Aws-Bot.zip -P /root/$name
+chmod -R 777 /root/$name
+unzip /root/$name/Aws-Bot.zip -d /root/$name
+chmod -R 777 /root/$name
+cd /root/$name  
+pack
 }
 
 
-start_menu(){
-    clear
-    echo
-    white "—————————————基础环境安装——————————————"
-    red "1.安装面板"
-    blue "2.添加用户"
-    red "3.卸载面板 "
-    white ""
-    echo
-    read -p "请输入数字:" num
-    case "$num" in
-    1)
-    install
-	;;
-    2)
-    add
-    ;;
-    3)
-    docker stop cloudpanel
-    docker rm cloudpanel
-    ;;
-	0)
-	exit 1
-	;;
-	*)
-	clear
-	echo "请输入正确数字"
-	sleep 3s
-	start_menu
-	;;
-    esac
+
+
+pack() {
+sed -i '2c '$Token'' /root/$name/config.yml
+echo
+green"命令提示:
+echo
+1.|sudo yum install epel-release;yum install screen&&screen -S Aws-Bot
+2.|cd /root/Aws-Bot&&./Aws-Bot
+3.|Ctrl + a + d	保持后台运行 
+screen -r Aws-Bot 恢复后台运行"
+echo 
 }
 
-start_menu
+
+if [ ! -f "/root/$name/config.yml" ];then
+install
+else
+pack
+fi
