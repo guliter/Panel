@@ -27,6 +27,7 @@ function white(){
 }
 
 name=Aws-Bot
+echo
 stty erase '^H' && read -p "请输入机器人Token：" Token
 
 ip=`curl http://whatismyip.akamai.com`
