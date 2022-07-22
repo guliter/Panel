@@ -56,8 +56,9 @@ pack
 pack() {
 echo
 redbg "【AWS-Panel】-默认面板:http://${ip}:8011 【admin admin123456】"
-green "命令提示:
 echo
+green "命令提示:
+
 1.|sudo yum install epel-release;yum install screen&&screen -S aws
 2.|cd /root/aws-Panel&&./AWS-Panel-linux-amd64 
 3.|Ctrl + a + d	保持后台运行 
