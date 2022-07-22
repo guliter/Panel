@@ -72,7 +72,7 @@ pack
 
 pack() {
 #sed -i '2c 'Bot_Token: '$Token'' /root/$name/config.yml
-key
+#key
 echo
 green "命令提示:
 https://github.com/Yuzuki616/Aws-Manger-Bot
