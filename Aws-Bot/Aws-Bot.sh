@@ -29,6 +29,7 @@ function white(){
 name=Aws-Bot
 echo
 green "命令提示:screen -r Aws-Bot   恢复后台运行 | Ctrl + a + d   保持后台运行"
+yellow "命令提示:rm -f /root/$name/config.yml 若bot启动失败请删除配置文件再运行"
 
 
 ip=`curl http://whatismyip.akamai.com`
